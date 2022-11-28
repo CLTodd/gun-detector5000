@@ -75,3 +75,40 @@ npyCleanPicFileName = "X:\\445\\full_data_clean.npy"
 npyCleanLabelFileName = "X:\\445\\full_data_clean_labels.npy"
 numpy.save(npyCleanPicFileName, allImagesArray)
 numpy.save(npyCleanLabelFileName, classLabelsArray)
+
+#################################################
+
+# Get smaller subsets of the arrays
+subsetImages = []
+subsetClassLables = [] 
+
+numberOfGuns = sum(classLabels)
+nonGuns = len(classLabels) - numberOfGuns
+
+# Proportion of the data we're going to retain for the subset
+prop = 0.2
+
+# Set the seed for the random number generator for reproducibility
+random.seed(a=16802)
+
+# Randomly sample about 20% of the guns
+gunIdx = random.sample(range(0, numberOfGuns), k=math.ceil(prop*numberOfGuns))
+for i in gunIdx:
+    subsetImages.append(allImages[i])
+    subsetClassLables.append(1)
+
+# Randomly sample about 20% of the non-guns
+nonGunIdx = random.sample(range(numberOfGuns, len(classLabels)), k=math.ceil(prop*nonGuns))
+for j in nonGunIdx:
+    subsetImages.append(allImages[j])
+    subsetClassLables.append(0)
+
+# Convert the lists into arrays
+subsetImagesArray = numpy.array(subsetImages)#, dtype=object)
+subsetClassLablesArray = numpy.array(subsetClassLables)#, dtype=object)
+
+# Save the arrays
+npyCleanPicSubsetFileName = "X:\\445\\20pctSubset_data_clean.npy"
+npyCleanLabelSubsetFileName = "X:\\445\\20pctSubset_data_clean_labels.npy"
+numpy.save(npyCleanPicSubsetFileName, subsetImagesArray)
+numpy.save(npyCleanLabelSubsetFileName, subsetClassLablesArray)
