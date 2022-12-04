@@ -24,3 +24,10 @@ def ImageCleaner(pathToImage):
        image = resize(image, (120, 160, 3))
        
     return(image)
+    
+    """
+    To Use:
+    from Preprocess import ImageCleaner
+    image = ImageCleaner(pathToUserUploadedImage)
+    """
+
