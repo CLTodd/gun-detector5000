@@ -1,5 +1,11 @@
+This repo was used as the project repository for the final project for *CMPSC 445: Applied Machine Learning in Data Science* at Penn State. Group project members included [Andrew Kuziel](https://www.linkedin.com/in/andrew-kuziel-371586153/), William Miller, [Jordan Sharkey](https://www.linkedin.com/in/jordan-sharkey-562a361b6/), and [Candace Todd](https://www.linkedin.com/in/candace-todd/).
+
+The intent behind our project is to advance the cause of utilizing machine learning for safety and security in the real world. Specifically, we want to promote safety in the most vulnerable places, places that serve vulnerable populations but lack the resources to fully staff security personnel (such as schools and hospitals). Shootings have become a more prevalent problem in our nation’s recent history, and we wanted to create a product that would bring us closer to putting it in the past. To achieve this, we’ve developed a Convolutional Neural Network that will take in a photo and predict whether or not a gun is contained in that image. We hope that this project can be used as the building block for an algorithm that can be used to monitor real-time security camera footage. While our project only works on still pictures, we are hoping the principles used in the creation of the project can further our understanding, and other’s, so that we can begin to get closer to a solution to this problem.
+
 The following ReadMe is from the original dataset owners:
+
 ---
+
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 # Weapon detection datasets
 
